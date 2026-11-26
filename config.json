@@ -1,0 +1,38 @@
+{
+  "output_file": "thethao.m3u",
+  "epg_file": "epg.xml",
+  "sources_file": "sources.json",
+  "request_timeout_seconds": 25,
+  "request_retries": 2,
+  "auto_detect_referers": true,
+  "referer_candidates": [],
+  "include_stream_groups": [
+    "blvs",
+    "blvs_bonglau",
+    "blvs_nguoitho"
+  ],
+  "apis": [
+    {
+      "name": "SutBongTV",
+      "id": "sutbongtv",
+      "display_name": "Sút Bóng TV",
+      "logo": "",
+      "playlist_file": "thethao.m3u",
+      "enabled": true,
+      "method": "GET",
+      "parser": "sutbongtv",
+      "match_url_template": "https://json.vnres.co/match/matches_{date}.json",
+      "rooms_url": "https://json.vnres.co/all_live_rooms.json",
+      "detail_url_template": "https://json.vnres.co/room/{room}/detail.json",
+      "cache_bust": true,
+      "max_detail_rooms": 150,
+      "default_stream_referer": "https://sutbongtv.space/",
+      "headers": {
+        "Accept": "*/*",
+        "Referer": "https://sutbongtv.space/",
+        "Origin": "https://sutbongtv.space",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
+      }
+    }
+  ]
+}
